@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Open+Sans:wght@400;700&display=swap');
+
+/* Fullscreen Centered Clock */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #e5e7eb;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    flex-direction: column;
+}
+
+/* Outer container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Clock Box */
+.clock {
+    text-align: center;
+}
+
+/* Time Display - Soft Neon Glow */
+.time {
+    font-size: 150px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 224, 198, 0.8),
+        0 0 20px rgba(0, 224, 198, 0.6);
+    transition: text-shadow 0.3s ease;
+}
+
+/* Date Display - Now Also Glowing */
+.date {
+    font-size: 75px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(0, 224, 198, 0.8),
+        0 0 20px rgba(0, 224, 198, 0.6);
+    transition: text-shadow 0.3s ease;
+}
+
+/* Smooth Glow Animation - Applied to Both */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(0, 224, 198, 0.8);
+    }
+
+    50% {
+        text-shadow: 0 0 20px rgba(0, 224, 198, 1);
+    }
+
+    100% {
+        text-shadow: 0 0 10px rgba(0, 224, 198, 0.8);
+    }
+}
+
+.time,
+.date {
+    animation: glow 2s infinite alternate;
+}
+
+/* Position Mute Button at Top Right */
+#toggleSound {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #00e0c6;
+    color: #0d0d0d;
+    transition: all 0.3s ease;
+}
+
+#toggleSound:hover {
+    background-color: #008f7a;
+    color: white;
+}
+
+/* Navbar Styling */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #00e0c6;
+}
